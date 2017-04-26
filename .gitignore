@@ -1,0 +1,27 @@
+String dump = NBTLibrary.dumpNBTCompound(nbt.getString("id"), nbt);
+      try
+      {
+        NBTLibrary.NBTWrapper retrace = NBTLibrary.loadTagCompound(dump);
+        if (retrace == null) {
+          throw new IllegalStateException();
+        }
+      }
+      catch (Exception e)
+      {
+            Utilities.sendMsg(sender, "&cCannot backtrace; cannot store.");
+            e.printStackTrace();
+        return;
+      }
+case 11:
+            String sub = nextValue.substring(1, nextValue.length() - 1);
+            if (!sub.isEmpty()) {
+               String[] intSplit = nextValue.substring(1, nextValue.length() - 1)
+                 .split(",", 0);
+            int[] ints = new int[intSplit.length];
+
+            for (int i = 0; i < intSplit.length; i++) {
+                ints[i] = Integer.parseInt(intSplit[i]);
+            }
+
+
+            return new NBTWrapper(nextName, new NBTTagIntArray(ints));
